@@ -338,18 +338,16 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form action="#" method="POST" id="contactForm">
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScQLi-RESR5ONlhno3hGWxkI5csYKpE68oB6k-j0K7n5BOgJg/formResponse" method="POST" target="hidden_iframe" id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="entry.1800156114" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="entry.865229798" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea name="entry.1963083783" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message <i
                                 class="fas fa-paper-plane"></i></button>
@@ -359,6 +357,15 @@
         </div>
     </section>
 
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <i class="fas fa-check-circle modal-icon"></i>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+        </div>
+    </div>
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">

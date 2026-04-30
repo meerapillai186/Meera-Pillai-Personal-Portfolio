@@ -58,4 +58,47 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Contact Form Submission Handling
+    let formSubmitted = false;
+    const contactForm = document.getElementById('contactForm');
+    const hiddenIframe = document.getElementById('hidden_iframe');
+    const successModal = document.getElementById('successModal');
+    const closeModal = document.querySelector('.close-modal');
+
+    if (contactForm && hiddenIframe) {
+        contactForm.addEventListener('submit', () => {
+            formSubmitted = true;
+            setTimeout(() => {
+                if (formSubmitted) {
+                    successModal.style.display = 'block';
+                    contactForm.reset();
+                    formSubmitted = false;
+                }
+            }, 1500);
+        });
+
+        hiddenIframe.addEventListener('load', () => {
+            if (formSubmitted) {
+                // Show modal
+                successModal.style.display = 'block';
+                // Reset form
+                contactForm.reset();
+                formSubmitted = false;
+            }
+        });
+    }
+
+    if (closeModal) {
+        closeModal.addEventListener('click', () => {
+            successModal.style.display = 'none';
+        });
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (event) => {
+        if (event.target == successModal) {
+            successModal.style.display = 'none';
+        }
+    });
 });
